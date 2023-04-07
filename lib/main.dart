@@ -1,10 +1,16 @@
+
 import 'package:assig_4_mdev_1005/home.dart';
 import 'package:assig_4_mdev_1005/news.dart';
 import 'package:assig_4_mdev_1005/notes.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
-void main() {
+
+
+void main() async {
+  await Hive.initFlutter();
+  var box = await Hive.openBox("notesBox");
   runApp(const MyApp());
 }
 
@@ -26,7 +32,7 @@ final GoRouter _router = GoRouter(
         GoRoute(
           path: 'news',
           builder: (BuildContext context, GoRouterState state) {
-            return const NewScreen();
+            return const NewsState();
           },
         )
       ],
@@ -41,7 +47,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      title: 'AM_SA',
       theme: ThemeData(
 
         primarySwatch: Colors.blue,

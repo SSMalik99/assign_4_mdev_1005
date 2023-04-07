@@ -17,11 +17,19 @@ class NoteTile extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Text(note),
-          ElevatedButton(onPressed:() {
-            onPressed(id);
-          }, child: const Text("Delete")
+          Column(
+            children: [
+              Container(
+                  width: MediaQuery.of(context).size.width*0.8,
+                  child: Text(note),
+              ),
+              ElevatedButton(onPressed:() {
+                onPressed(id);
+              }, child: const Text("Delete")
+              )
+            ],
           )
+
         ],
       ),
     );
