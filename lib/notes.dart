@@ -12,7 +12,8 @@ import 'package:hive/hive.dart';
 
 
 
-// Define a custom Form widget.
+// Define a custom Form widget. for the stateful data
+// this will create a state ful widget to get data from the user
 class MyCustomForm extends StatefulWidget {
   const MyCustomForm({super.key});
 
@@ -21,15 +22,21 @@ class MyCustomForm extends StatefulWidget {
 }
 
 
-
+/// for stateful classes
+/// therer must be two things
+/// one is stateful class 
+/// onther which will use those states
 
 /// The Notes screen
+/// this screen is rendered when user will interact with the notes
 class NoteScreen extends State<MyCustomForm> {
   /// Constructs a [NoteScreen]
   ///
   final _myController = TextEditingController();
 
   NotesDatabase notesDb = NotesDatabase();
+  
+  // open the hive box
   final notesBox = Hive.box("notesBox");
 
   @override
@@ -57,6 +64,7 @@ class NoteScreen extends State<MyCustomForm> {
 
 
 
+/// deleta a note from the database
   void deleteNote ( int index) {
     developer.log(index.toString());
     setState(() {

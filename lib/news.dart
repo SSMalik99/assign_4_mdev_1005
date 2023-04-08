@@ -12,7 +12,7 @@ class NewsState extends StatefulWidget {
   State<NewsState> createState() => NewScreen();
 }
 
-/// The home screen
+/// The News screen
 class NewScreen extends State<NewsState> {
   /// Constructs a [NewScreen]
 
@@ -28,6 +28,7 @@ class NewScreen extends State<NewsState> {
     getNews();
   }
 
+/// get news from the internet
   void getNews() async {
     NewsAPI news = NewsAPI();
     await news.getNews();

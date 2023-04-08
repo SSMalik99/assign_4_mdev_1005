@@ -4,6 +4,8 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'dart:developer' as developer;
 
+
+/// API service for the data of news from the internet
 class NewsAPI {
 
   List<Article> news  = [];

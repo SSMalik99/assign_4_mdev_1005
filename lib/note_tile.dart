@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
+
+// create a new tile for the ntoes
 class NoteTile extends StatelessWidget {
   final String note;
   final int id;
-  final Function(int) onPressed;
+  final Function(int) onPressed; // a function to get the function from the other class
   const NoteTile({super.key, required this.id, required this.note, required this.onPressed});
 
   @override

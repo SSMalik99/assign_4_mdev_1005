@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 // import 'package:url_launcher/url_launcher.dart';
 
+
+// create a news tile for the list view
 class NewsTile extends StatelessWidget {
   final String imgUrl, title, desc, content, posturl;
 
