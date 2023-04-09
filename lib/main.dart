@@ -7,14 +7,17 @@ import 'package:go_router/go_router.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 
-
+/// Main function for the application
 void main() async {
+  /// open the local database by using hive
   await Hive.initFlutter();
   var box = await Hive.openBox("notesBox");
+
+/// run the application
   runApp(const MyApp());
 }
 
-// App Router
+// App Router for our application
 final GoRouter _router = GoRouter(
   routes: <RouteBase>[
     GoRoute(
